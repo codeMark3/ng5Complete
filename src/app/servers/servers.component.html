@@ -1,0 +1,17 @@
+<label>Sever Name</label>
+<!-- <input type="text" class="form-control" (input)="onUpdateServeName($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<button 
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()"
+>Add Server</button>
+<!-- property binbing -->
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- interpolation -->
+<!-- <p>{{ allowNewServer }}</p> -->
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+
+<app-server *ngFor="let server of servers; let i = index"></app-server>
+
